@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#064e3b">
+  <title>Food Allocation | Ration Seva & Food Distribution</title>
+  <link rel="stylesheet" href="..\Public\dash-food.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dash-Dash.html">
+        <span class="brand-mark"><i class="fa-solid fa-wheat-awn"></i></span>
+        <span class="brand-copy">
+          <strong>Ration Seva</strong>
+          <small>& Food Distribution</small>
+          <em>Government of Gujarat</em>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a class="nav-link" href="dash-Dash.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="dash-dist.html"><i class="fa-solid fa-location-dot"></i><span>Districts</span></a>
+        <a class="nav-link" href="dash-dealer.html"><i class="fa-solid fa-store"></i><span>Dealer Shops</span></a>
+        <a class="nav-link active" href="dash-food.html"><i class="fa-solid fa-box-open"></i><span>Food Allocation</span></a>
+        <a class="nav-link" href="#reports"><i class="fa-solid fa-chart-column"></i><span>Reports & Analytics</span></a>
+        <a class="nav-link" href="#users"><i class="fa-solid fa-users"></i><span>Users & Management</span></a>
+        <a class="nav-link" href="#settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+
+      <div class="sidebar-art">
+        <div class="sun"></div>
+        <div class="field field-one"></div>
+        <div class="field field-two"></div>
+        <i class="fa-solid fa-wheat-awn"></i>
+        <p>Safe Food<br>Healthy People<br>Stronger India</p>
+      </div>
+
+      <div class="sidebar-bottom">
+        <span class="online-dot"></span> System status: Online
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="page-heading">
+          <h1>Food Allocation</h1>
+          <p>Manage and track food grain allocation across all districts of Gujarat</p>
+        </div>
+
+        <div class="topbar-actions">
+          <label class="month-select">
+            <i class="fa-regular fa-calendar-days"></i>
+            <select id="reportMonth" aria-label="Reporting month">
+              <option>October 2026</option>
+              <option>September 2026</option>
+              <option>August 2026</option>
+              <option>July 2026</option>
+            </select>
+          </label>
+
+          <button class="icon-button" id="notificationsButton" aria-label="View recent activity">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-count">3</span>
+          </button>
+
+          <div class="admin-profile">
+            <span class="avatar"><i class="fa-solid fa-user-tie"></i></span>
+            <span>
+              <strong>Administrator</strong>
+              <small>Food & Civil Supplies Dept.</small>
+            </span>
+            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="stat-grid">
+          <article class="stat-card stat-green">
+            <span class="stat-icon"><i class="fa-solid fa-wheat-awn"></i></span>
+            <div><p>Total Food Allocated</p><strong>12,480 <small>MT</small></strong><span class="trend up">↑ 6% from last month</span></div>
+          </article>
+
+          <article class="stat-card stat-blue">
+            <span class="stat-icon"><i class="fa-solid fa-truck"></i></span>
+            <div><p>Total Food Distributed</p><strong>10,742 <small>MT</small></strong><span class="trend up-blue">↑ 5% from last month</span></div>
+          </article>
+
+          <article class="stat-card stat-amber">
+            <span class="stat-icon"><i class="fa-solid fa-stopwatch"></i></span>
+            <div><p>Pending Distribution</p><strong>1,738 <small>MT</small></strong><span class="trend down">↓ 12% from last month</span></div>
+          </article>
+
+          <article class="stat-card stat-green">
+            <span class="stat-icon"><i class="fa-solid fa-cubes-stacked"></i></span>
+            <div><p>Food Items</p><strong>5</strong><span class="stat-caption">Rice, Wheat, Pulses, Oil, Sugar</span></div>
+          </article>
+
+          <article class="stat-card stat-blue">
+            <span class="stat-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div><p>Districts Covered</p><strong>33</strong><span class="stat-caption">All districts covered</span></div>
+          </article>
+
+          <article class="stat-card stat-red">
+            <span class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <div><p>Shops with Stock Alerts</p><strong>196</strong><span class="stat-caption">4% of total shops</span></div>
+          </article>
+        </section>
+
+        <section class="overview-grid">
+          <article class="panel map-panel">
+            <div class="panel-heading">
+              <h2><i class="fa-solid fa-map"></i> State-wise Allocation Overview</h2>
+              <span class="heading-unit">Allocation (MT)</span>
+            </div>
+
+            <div class="map-content">
+              <div class="gujarat-visual">
+                <svg viewBox="0 0 350 250" role="img" aria-label="Illustrative Gujarat district allocation map">
+                  <defs>
+                    <clipPath id="gujaratClip">
+                      <path d="M39 47 L72 35 L92 18 L116 28 L139 13 L163 26 L183 21 L195 37 L224 34 L244 48 L271 58 L286 82 L278 101 L300 122 L282 145 L265 152 L258 177 L239 189 L225 216 L204 227 L184 207 L167 220 L151 204 L142 181 L122 177 L104 157 L85 151 L72 132 L48 124 L33 105 L20 84 L30 65 Z"/>
+                    </clipPath>
+                  </defs>
+                  <path d="M39 47 L72 35 L92 18 L116 28 L139 13 L163 26 L183 21 L195 37 L224 34 L244 48 L271 58 L286 82 L278 101 L300 122 L282 145 L265 152 L258 177 L239 189 L225 216 L204 227 L184 207 L167 220 L151 204 L142 181 L122 177 L104 157 L85 151 L72 132 L48 124 L33 105 L20 84 L30 65 Z" fill="#dcefe3" stroke="#fff" stroke-width="4"/>
+                  <g clip-path="url(#gujaratClip)" stroke="#fff" stroke-width="1.7">
+                    <path d="M15 68 L90 48 L115 90 L52 117 Z" fill="#13805f"/>
+                    <path d="M90 48 L145 22 L165 74 L115 90 Z" fill="#54a85d"/>
+                    <path d="M145 22 L197 30 L214 77 L165 74 Z" fill="#f4bf3d"/>
+                    <path d="M197 30 L260 43 L275 88 L214 77 Z" fill="#2d925e"/>
+                    <path d="M52 117 L115 90 L129 137 L77 153 L34 134 Z" fill="#f0ac26"/>
+                    <path d="M115 90 L165 74 L183 119 L129 137 Z" fill="#63ae57"/>
+                    <path d="M165 74 L214 77 L228 119 L183 119 Z" fill="#12805d"/>
+                    <path d="M214 77 L275 88 L300 122 L243 140 L228 119 Z" fill="#ef9e1c"/>
+                    <path d="M77 153 L129 137 L142 181 L104 170 L72 139 Z" fill="#0d7755"/>
+                    <path d="M129 137 L183 119 L196 158 L142 181 Z" fill="#f5c343"/>
+                    <path d="M183 119 L243 140 L228 177 L196 158 Z" fill="#54a85d"/>
+                    <path d="M243 140 L282 145 L265 174 L228 177 Z" fill="#ed7e30"/>
+                    <path d="M142 181 L196 158 L204 207 L184 220 L151 204 Z" fill="#f1b82e"/>
+                    <path d="M196 158 L228 177 L225 216 L204 227 Z" fill="#17815d"/>
+                  </g>
+                </svg>
+                <span class="map-caption">Illustrative district overview — not a geographic boundary map</span>
+              </div>
+
+              <div class="map-legend">
+                <p><span class="legend-dot dark-green"></span><span><b>90–100%</b><small>High allocation</small></span></p>
+                <p><span class="legend-dot leaf-green"></span><span><b>70–89%</b><small>Good progress</small></span></p>
+                <p><span class="legend-dot yellow"></span><span><b>50–69%</b><small>Moderate</small></span></p>
+                <p><span class="legend-dot red"></span><span><b>Below 50%</b><small>Needs attention</small></span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel item-panel">
+            <div class="panel-heading"><h2><i class="fa-solid fa-location-dot"></i> Food Allocation by Item</h2></div>
+            <div class="item-content">
+              <div class="donut-chart">
+                <div class="donut-inner"><strong>12,480 <small>MT</small></strong><span>Total Allocated</span></div>
+              </div>
+              <div class="item-legend">
+                <div class="item-row"><span class="item-icon rice"><i class="fa-solid fa-wheat-awn"></i></span><b>Rice</b><span>32%</span><small>3,994 MT</small></div>
+                <div class="item-row"><span class="item-icon wheat"><i class="fa-solid fa-wheat-awn"></i></span><b>Wheat</b><span>28%</span><small>3,494 MT</small></div>
+                <div class="item-row"><span class="item-icon pulses"><i class="fa-solid fa-seedling"></i></span><b>Pulses</b><span>18%</span><small>2,246 MT</small></div>
+                <div class="item-row"><span class="item-icon oil"><i class="fa-solid fa-bottle-water"></i></span><b>Edible Oil</b><span>12%</span><small>1,498 MT</small></div>
+                <div class="item-row"><span class="item-icon sugar"><i class="fa-solid fa-cubes-stacked"></i></span><b>Sugar</b><span>10%</span><small>1,248 MT</small></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="right-column">
+            <article class="panel progress-panel">
+              <div class="panel-heading"><h2><i class="fa-solid fa-bolt"></i> Allocation Progress</h2></div>
+              <div class="progress-list">
+                <div class="progress-item"><span class="item-icon rice"><i class="fa-solid fa-wheat-awn"></i></span><div class="progress-info"><div class="progress-title"><span>Rice</span><b>92%</b></div><div class="progress-track"><span class="progress-rice" style="width:92%"></span></div><small>3,994 / 4,320 MT</small></div></div>
+                <div class="progress-item"><span class="item-icon wheat"><i class="fa-solid fa-wheat-awn"></i></span><div class="progress-info"><div class="progress-title"><span>Wheat</span><b>88%</b></div><div class="progress-track"><span class="progress-wheat" style="width:88%"></span></div><small>3,494 / 3,960 MT</small></div></div>
+                <div class="progress-item"><span class="item-icon pulses"><i class="fa-solid fa-seedling"></i></span><div class="progress-info"><div class="progress-title"><span>Pulses</span><b>76%</b></div><div class="progress-track"><span class="progress-pulses" style="width:76%"></span></div><small>2,246 / 2,950 MT</small></div></div>
+                <div class="progress-item"><span class="item-icon oil"><i class="fa-solid fa-bottle-water"></i></span><div class="progress-info"><div class="progress-title"><span>Edible Oil</span><b>69%</b></div><div class="progress-track"><span class="progress-oil" style="width:69%"></span></div><small>1,498 / 2,160 MT</small></div></div>
+                <div class="progress-item"><span class="item-icon sugar"><i class="fa-solid fa-cubes-stacked"></i></span><div class="progress-info"><div class="progress-title"><span>Sugar</span><b>62%</b></div><div class="progress-track"><span class="progress-sugar" style="width:62%"></span></div><small>1,248 / 2,000 MT</small></div></div>
+              </div>
+            </article>
+
+            <article class="panel activity-panel" id="recentActivity">
+              <div class="panel-heading"><h2><i class="fa-solid fa-clock-rotate-left"></i> Recent Activity</h2><button class="text-button" id="viewActivityButton">View All →</button></div>
+              <div class="activity-list">
+                <div class="activity-item"><span class="item-icon rice"><i class="fa-solid fa-wheat-awn"></i></span><div><b>Rice allocated to Rajkot district</b><p>1,000 MT · 2 hours ago</p></div></div>
+                <div class="activity-item"><span class="item-icon wheat"><i class="fa-solid fa-wheat-awn"></i></span><div><b>Wheat dispatched to Ahmedabad</b><p>800 MT · 4 hours ago</p></div></div>
+                <div class="activity-item"><span class="item-icon pulses"><i class="fa-solid fa-seedling"></i></span><div><b>Pulses received at Surat warehouse</b><p>600 MT · 6 hours ago</p></div></div>
+                <div class="activity-item"><span class="item-icon oil"><i class="fa-solid fa-bottle-water"></i></span><div><b>Oil allocation updated for Vadodara</b><p>400 MT · 8 hours ago</p></div></div>
+                <div class="activity-item"><span class="item-icon sugar"><i class="fa-solid fa-cubes-stacked"></i></span><div><b>Sugar distributed in Jamnagar</b><p>300 MT · 1 day ago</p></div></div>
+              </div>
+            </article>
+
+            <article class="panel quick-actions-panel">
+              <div class="panel-heading"><h2><i class="fa-solid fa-trophy"></i> Quick Actions</h2></div>
+              <div class="quick-actions-grid">
+                <button class="quick-action" id="allocateButton"><i class="fa-solid fa-cube"></i><span>Allocate Food</span><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="quick-action" id="reportButton"><i class="fa-solid fa-file-lines"></i><span>View Allocation Report</span><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="quick-action" id="stockButton"><i class="fa-solid fa-warehouse"></i><span>Manage Stock</span><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="quick-action" id="exportButton"><i class="fa-solid fa-download"></i><span>Export Data</span><i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel district-table-panel" id="districtAllocation">
+          <div class="panel-heading table-heading">
+            <h2><i class="fa-solid fa-graduation-cap"></i> District-wise Allocation Summary</h2>
+            <div class="table-actions">
+              <select id="itemFilter" aria-label="Filter by food item">
+                <option value="all">All Food Items</option>
+                <option>Rice</option><option>Wheat</option><option>Pulses</option><option>Edible Oil</option><option>Sugar</option>
+              </select>
+              <button class="primary-button" id="viewMapButton"><i class="fa-solid fa-location-dot"></i> View Map</button>
+            </div>
+          </div>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>#</th><th>District</th><th>Food Item</th><th>Allocated (MT)</th><th>Distributed (MT)</th><th>Remaining (MT)</th><th>Completion %</th><th>Status</th></tr>
+              </thead>
+              <tbody id="allocationTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="table-footer">
+            <p id="tableSummary">Showing sample allocation records</p>
+            <div class="pagination" id="pagination"></div>
+          </div>
+        </section>
+
+        <section class="security-banner">
+          <div class="banner-image"><i class="fa-solid fa-wheat-awn"></i><i class="fa-solid fa-bowl-food"></i><i class="fa-solid fa-seedling"></i></div>
+          <div><h2>Ensuring Food Security<br>for Every Family</h2><p>Ration Seva & Food Distribution</p><small>Government of Gujarat</small></div>
+        </section>
+
+        <p class="demo-note"><i class="fa-solid fa-circle-info"></i> Demonstration only: food allocation figures are sample data. Connect a verified database before using this system operationally.</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="allocationModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading"><div><h2 id="modalTitle">Allocate Food</h2><p>Enter a new sample district allocation.</p></div><button type="button" id="closeModalButton" class="close-button" aria-label="Close">×</button></div>
+      <form id="allocationForm">
+        <div class="form-grid">
+          <label>District<select id="newDistrict" required><option value="">Select district</option><option>Rajkot</option><option>Ahmedabad</option><option>Surat</option><option>Vadodara</option><option>Jamnagar</option><option>Bhavnagar</option><option>Porbandar</option><option>Amreli</option><option>Gandhinagar</option><option>Kutch</option></select></label>
+          <label>Food Item<select id="newFoodItem" required><option value="">Select item</option><option>Rice</option><option>Wheat</option><option>Pulses</option><option>Edible Oil</option><option>Sugar</option></select></label>
+          <label>Allocated Stock (MT)<input id="newAllocated" type="number" min="0.1" step="0.1" required placeholder="e.g. 500"></label>
+          <label>Distributed Stock (MT)<input id="newDistributed" type="number" min="0" step="0.1" value="0" required></label>
+        </div>
+        <p class="form-error" id="formError"></p>
+        <div class="modal-actions"><button type="button" class="secondary-button" id="cancelModalButton">Cancel</button><button type="submit" class="primary-button">Save Allocation</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="JavaScripts\dash-food.js"></script>
+</body>
+</html>

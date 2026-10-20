@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#064e3b">
+  <title>Dealer Shops | Ration Seva & Food Distribution</title>
+  <link rel="stylesheet" href="..\Public\dash-dealer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dash-Dash.html">
+        <span class="brand-mark"><i class="fa-solid fa-wheat-awn"></i></span>
+        <span class="brand-copy">
+          <strong>Ration Seva</strong>
+          <small>& Food Distribution</small>
+          <em>Government of Gujarat</em>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a class="nav-link" href="dash-Dash.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a>
+        <a class="nav-link" href="dash-dist.html"><i class="fa-solid fa-location-dot"></i><span>Districts</span></a>
+        <a class="nav-link active" href="dash-dealer.html"><i class="fa-solid fa-store"></i><span>Dealer Shops</span></a>
+        <a class="nav-link" href="dash-food.html"><i class="fa-solid fa-box-open"></i><span>Food Allocation</span></a>
+        <a class="nav-link" href="#reports"><i class="fa-solid fa-chart-column"></i><span>Reports & Analytics</span></a>
+        <a class="nav-link" href="#users"><i class="fa-solid fa-users"></i><span>Users & Management</span></a>
+        <a class="nav-link" href="#settings"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+      </nav>
+
+      <div class="sidebar-art">
+        <div class="sun"></div>
+        <div class="field field-one"></div>
+        <div class="field field-two"></div>
+        <i class="fa-solid fa-wheat-awn"></i>
+        <p>Safe Food<br>Healthy People<br>Stronger India</p>
+      </div>
+
+      <div class="sidebar-bottom">
+        <span class="online-dot"></span> System status: Online
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="page-heading">
+          <h1>Dealer Shops</h1>
+          <p>View and manage ration dealer shops across Gujarat</p>
+        </div>
+
+        <div class="topbar-actions">
+          <label class="month-select">
+            <i class="fa-regular fa-calendar-days"></i>
+            <select id="reportMonth" aria-label="Report month">
+              <option>October 2026</option>
+              <option>September 2026</option>
+              <option>August 2026</option>
+              <option>July 2026</option>
+            </select>
+          </label>
+
+          <button class="icon-button" id="notificationsButton" aria-label="View notifications">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-count">3</span>
+          </button>
+
+          <div class="admin-profile">
+            <span class="avatar"><i class="fa-solid fa-user-tie"></i></span>
+            <span>
+              <strong>Administrator</strong>
+              <small>Food & Civil Supplies Dept.</small>
+            </span>
+            <i class="fa-solid fa-chevron-down profile-chevron"></i>
+          </div>
+        </div>
+      </header>
+
+      <div class="content-wrap">
+        <section class="stat-grid">
+          <article class="stat-card stat-green">
+            <span class="stat-icon"><i class="fa-solid fa-store"></i></span>
+            <div><p>Total Dealer Shops</p><strong id="totalShops">5,240</strong><small>All districts</small></div>
+          </article>
+          <article class="stat-card stat-blue">
+            <span class="stat-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <div><p>Active Shops</p><strong>4,632</strong><small>88% of total</small></div>
+          </article>
+          <article class="stat-card stat-amber">
+            <span class="stat-icon"><i class="fa-solid fa-pause"></i></span>
+            <div><p>Inactive Shops</p><strong>412</strong><small>8% of total</small></div>
+          </article>
+          <article class="stat-card stat-green">
+            <span class="stat-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div><p>Districts</p><strong>33</strong><small>All districts covered</small></div>
+          </article>
+          <article class="stat-card stat-blue">
+            <span class="stat-icon"><i class="fa-solid fa-people-group"></i></span>
+            <div><p>Total Beneficiaries</p><strong>48.76 L</strong><small>Ration card holders</small></div>
+          </article>
+          <article class="stat-card stat-red">
+            <span class="stat-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+            <div><p>Shops Pending Stock</p><strong>196</strong><small>4% of total</small></div>
+          </article>
+        </section>
+
+        <section class="overview-grid">
+          <article class="panel district-map-panel">
+            <div class="panel-heading">
+              <h2><i class="fa-solid fa-map"></i> Dealer Shops by District</h2>
+              <select id="mapDistrict" aria-label="Select district">
+                <option value="all">All Districts</option>
+                <option>Rajkot</option>
+                <option>Ahmedabad</option>
+                <option>Surat</option>
+                <option>Vadodara</option>
+                <option>Jamnagar</option>
+                <option>Bhavnagar</option>
+                <option>Porbandar</option>
+              </select>
+            </div>
+
+            <div class="map-content">
+              <div class="gujarat-visual">
+                <svg viewBox="0 0 350 250" role="img" aria-label="Illustrative Gujarat district map">
+                  <defs>
+                    <clipPath id="gujaratClip">
+                      <path d="M39 47 L72 35 L92 18 L116 28 L139 13 L163 26 L183 21 L195 37 L224 34 L244 48 L271 58 L286 82 L278 101 L300 122 L282 145 L265 152 L258 177 L239 189 L225 216 L204 227 L184 207 L167 220 L151 204 L142 181 L122 177 L104 157 L85 151 L72 132 L48 124 L33 105 L20 84 L30 65 Z"/>
+                    </clipPath>
+                  </defs>
+                  <path d="M39 47 L72 35 L92 18 L116 28 L139 13 L163 26 L183 21 L195 37 L224 34 L244 48 L271 58 L286 82 L278 101 L300 122 L282 145 L265 152 L258 177 L239 189 L225 216 L204 227 L184 207 L167 220 L151 204 L142 181 L122 177 L104 157 L85 151 L72 132 L48 124 L33 105 L20 84 L30 65 Z" fill="#dcefe3" stroke="#fff" stroke-width="4"/>
+                  <g clip-path="url(#gujaratClip)" stroke="#fff" stroke-width="1.7">
+                    <path d="M15 68 L90 48 L115 90 L52 117 Z" fill="#13805f"/>
+                    <path d="M90 48 L145 22 L165 74 L115 90 Z" fill="#54a85d"/>
+                    <path d="M145 22 L197 30 L214 77 L165 74 Z" fill="#f4bf3d"/>
+                    <path d="M197 30 L260 43 L275 88 L214 77 Z" fill="#2d925e"/>
+                    <path d="M52 117 L115 90 L129 137 L77 153 L34 134 Z" fill="#f0ac26"/>
+                    <path d="M115 90 L165 74 L183 119 L129 137 Z" fill="#63ae57"/>
+                    <path d="M165 74 L214 77 L228 119 L183 119 Z" fill="#12805d"/>
+                    <path d="M214 77 L275 88 L300 122 L243 140 L228 119 Z" fill="#ef9e1c"/>
+                    <path d="M77 153 L129 137 L142 181 L104 170 L72 139 Z" fill="#0d7755"/>
+                    <path d="M129 137 L183 119 L196 158 L142 181 Z" fill="#f5c343"/>
+                    <path d="M183 119 L243 140 L228 177 L196 158 Z" fill="#54a85d"/>
+                    <path d="M243 140 L282 145 L265 174 L228 177 Z" fill="#ed7e30"/>
+                    <path d="M142 181 L196 158 L204 207 L184 220 L151 204 Z" fill="#f1b82e"/>
+                    <path d="M196 158 L228 177 L225 216 L204 227 Z" fill="#17815d"/>
+                  </g>
+                </svg>
+                <span class="map-caption">Illustrative district overview</span>
+              </div>
+
+              <div class="map-legend">
+                <p><span class="legend-dot dark-green"></span><span><b>90–100%</b><small>High stock</small></span></p>
+                <p><span class="legend-dot leaf-green"></span><span><b>70–89%</b><small>Good</small></span></p>
+                <p><span class="legend-dot yellow"></span><span><b>50–69%</b><small>Moderate</small></span></p>
+                <p><span class="legend-dot red"></span><span><b>Below 50%</b><small>Low</small></span></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel status-panel">
+            <div class="panel-heading"><h2><i class="fa-solid fa-chart-simple"></i> Shop Status</h2></div>
+            <div class="status-content">
+              <div class="donut-chart">
+                <div class="donut-inner"><strong>5,240</strong><span>Total Shops</span></div>
+              </div>
+              <div class="status-legend">
+                <p><span class="legend-dot dark-green"></span><span><b>Active</b><small>4,632 (88%)</small></span></p>
+                <p><span class="legend-dot yellow"></span><span><b>Inactive</b><small>412 (8%)</small></span></p>
+                <p><span class="legend-dot red"></span><span><b>Pending Stock</b><small>196 (4%)</small></span></p>
+              </div>
+            </div>
+          </article>
+
+          <div class="right-column">
+            <article class="panel quick-actions-panel">
+              <div class="panel-heading"><h2><i class="fa-solid fa-bolt"></i> Quick Actions</h2></div>
+              <button class="quick-action" id="addShopButton"><span><i class="fa-solid fa-plus"></i></span>Add New Dealer Shop</button>
+              <button class="quick-action" id="viewAllButton"><span><i class="fa-solid fa-store"></i></span>View All Shops</button>
+              <button class="quick-action" id="manageStockButton"><span><i class="fa-solid fa-cube"></i></span>Manage Stock</button>
+              <button class="quick-action" id="exportButton"><span><i class="fa-solid fa-download"></i></span>Export Report</button>
+            </article>
+
+            <article class="panel activity-panel">
+              <div class="panel-heading">
+                <h2><i class="fa-regular fa-clock"></i> Recent Activity</h2>
+                <button class="text-button" id="viewActivityButton">View All →</button>
+              </div>
+              <div class="activity-list" id="activityList">
+                <div class="activity-item"><span class="activity-icon success"><i class="fa-solid fa-check"></i></span><div><b>DS001 - Rajkot</b><p>Distribution completed (45 MT)</p></div><time>2 hours ago</time></div>
+                <div class="activity-item"><span class="activity-icon warning"><i class="fa-solid fa-box"></i></span><div><b>DS005 - Jamnagar</b><p>Stock received (45 MT)</p></div><time>4 hours ago</time></div>
+                <div class="activity-item"><span class="activity-icon danger"><i class="fa-solid fa-exclamation"></i></span><div><b>DS012 - Ahmedabad</b><p>Low stock alert (5 MT remaining)</p></div><time>6 hours ago</time></div>
+                <div class="activity-item"><span class="activity-icon info"><i class="fa-solid fa-store"></i></span><div><b>DS028 - Surat</b><p>New shop registered</p></div><time>8 hours ago</time></div>
+                <div class="activity-item"><span class="activity-icon success"><i class="fa-solid fa-check"></i></span><div><b>DS034 - Vadodara</b><p>Stock updated (20 MT)</p></div><time>1 day ago</time></div>
+              </div>
+            </article>
+
+            <article class="panel performance-panel">
+              <div class="panel-heading"><h2><i class="fa-solid fa-trophy"></i> Shop Performance</h2></div>
+              <p class="panel-subtitle">Top 5 by distribution</p>
+              <div class="performance-row"><span>Rajkot</span><div class="progress-track"><span style="width:92%"></span></div><small>92%</small></div>
+              <div class="performance-row"><span>Ahmedabad</span><div class="progress-track"><span style="width:88%"></span></div><small>88%</small></div>
+              <div class="performance-row"><span>Surat</span><div class="progress-track"><span style="width:76%"></span></div><small>76%</small></div>
+              <div class="performance-row"><span>Vadodara</span><div class="progress-track"><span style="width:69%"></span></div><small>69%</small></div>
+              <div class="performance-row"><span>Jamnagar</span><div class="progress-track"><span style="width:62%"></span></div><small>62%</small></div>
+            </article>
+          </div>
+        </section>
+
+        <form class="filter-bar" id="filterForm">
+          <label class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="search" id="shopSearch" placeholder="Search by shop ID, name, district or village..."></label>
+          <label class="filter-select">District:
+            <select id="districtFilter">
+              <option value="all">All Districts</option>
+              <option>Rajkot</option><option>Ahmedabad</option><option>Surat</option><option>Vadodara</option><option>Jamnagar</option><option>Bhavnagar</option><option>Porbandar</option><option>Amreli</option><option>Gandhinagar</option><option>Kutch</option>
+            </select>
+          </label>
+          <label class="filter-select">Status:
+            <select id="statusFilter">
+              <option value="all">All Status</option>
+              <option>Active</option><option>Inactive</option><option>Pending Stock</option>
+            </select>
+          </label>
+          <button class="primary-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          <button class="secondary-button" type="button" id="clearFiltersButton">Clear</button>
+        </form>
+
+        <section class="panel shops-table-panel" id="shopsTableSection">
+          <div class="panel-heading">
+            <h2><i class="fa-solid fa-store"></i> Dealer Shops List</h2>
+            <button class="primary-button" id="tableAddButton" type="button"><i class="fa-solid fa-plus"></i> Add Shop</button>
+          </div>
+
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>#</th><th>Shop ID</th><th>Shop Name</th><th>District</th><th>Village</th><th>Allocated (MT)</th><th>Received (MT)</th><th>Distributed (MT)</th><th>Remaining (MT)</th><th>Status</th><th>Action</th></tr>
+              </thead>
+              <tbody id="shopsTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="table-footer">
+            <p id="tableSummary">Showing sample shops</p>
+            <div class="pagination" id="pagination"></div>
+          </div>
+        </section>
+
+        <p class="demo-note">Demonstration only: dealer shop data is sample data. Connect a verified database before operational use.</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="shopModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-heading"><div><h2 id="modalTitle">Add Dealer Shop</h2><p>Enter the basic shop and stock details.</p></div><button type="button" id="closeModalButton" class="close-button" aria-label="Close">×</button></div>
+      <form id="shopForm">
+        <div class="form-grid">
+          <label>Shop ID<input id="newShopId" required placeholder="e.g. DS011"></label>
+          <label>Shop Name<input id="newShopName" required placeholder="Dealer/shop name"></label>
+          <label>District<select id="newShopDistrict" required><option value="">Select district</option><option>Rajkot</option><option>Ahmedabad</option><option>Surat</option><option>Vadodara</option><option>Jamnagar</option><option>Bhavnagar</option><option>Porbandar</option><option>Amreli</option><option>Gandhinagar</option><option>Kutch</option></select></label>
+          <label>Village / Area<input id="newShopVillage" required placeholder="Village or area"></label>
+          <label>Allocated stock (MT)<input id="newShopAllocated" type="number" min="0" step="0.1" value="0" required></label>
+          <label>Received stock (MT)<input id="newShopReceived" type="number" min="0" step="0.1" value="0" required></label>
+          <label>Distributed stock (MT)<input id="newShopDistributed" type="number" min="0" step="0.1" value="0" required></label>
+          <label>Status<select id="newShopStatus"><option>Active</option><option>Inactive</option><option>Pending Stock</option></select></label>
+        </div>
+        <p class="form-error" id="formError"></p>
+        <div class="modal-actions"><button type="button" class="secondary-button" id="cancelModalButton">Cancel</button><button type="submit" class="primary-button">Save Shop</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="JavaScripts\dash-dealer.js"></script>
+</body>
+</html>

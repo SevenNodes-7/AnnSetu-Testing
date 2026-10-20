@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Smart Ration Seva</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="..\Public\ad-sing in.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html" class="brand">
+            <div class="logo">🌾</div>
+            <div class="brand-text">
+                <h1>Smart Ration Seva</h1>
+                <p>સ્વસ્થ પરિવાર | સુરક્ષિત ભવિષ્ય</p>
+            </div>
+        </a>
+        <a href="index.html" class="back-login">
+            ← Back to Login
+        </a>
+    </header>
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="signup-card">
+            <!-- Left Welcome Panel -->
+            <div class="welcome-panel">
+                <div class="admin-badge">
+                    🌱 &nbsp; Smart Ration Seva
+                </div>
+                <h2>
+                    નવા સભ્યનું<br>
+                    સ્વાગત છે!
+                </h2>
+                <p class="welcome-description">
+                    Smart Ration Seva સાથે જોડાઓ અને
+                    રેશન સંબંધિત સેવાઓનો સરળતાથી લાભ લો.
+                </p>
+                <!-- Benefits -->
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🔐</span>
+                        <div>
+                            <h3>સુરક્ષિત એકાઉન્ટ</h3>
+                            <p>તમારી માહિતીની સુરક્ષા</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📋</span>
+                        <div>
+                            <h3>સરળ વ્યવસ્થાપન</h3>
+                            <p>રેશનની માહિતી સરળતાથી મેળવો</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🌾</span>
+                        <div>
+                            <h3>સ્માર્ટ રેશન સેવા</h3>
+                            <p>ડિજિટલ અને સરળ સેવા</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- CSS Illustration -->
+                <div class="farm-art" aria-hidden="true">
+                    <div class="sun"></div>
+                    <div class="hill hill-one"></div>
+                    <div class="hill hill-two"></div>
+                    <div class="crop crop-one">🌾</div>
+                    <div class="crop crop-two">🌿</div>
+                    <div class="grain-bag">🌾</div>
+                </div>
+            </div>
+            <!-- Right Registration Panel -->
+            <div class="form-panel">
+                <div class="form-heading">
+                    <div class="form-logo">🌾</div>
+                    <h2>Create New Account</h2>
+                    <p>
+                        તમારી વિગતો ભરો અને નવું એકાઉન્ટ બનાવો.
+                    </p>
+                </div>
+                <!-- Registration Form -->
+                <form id="signupForm" action="#" method="post">
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name / પૂરું નામ</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            minlength="2"
+                            required
+                        >
+                    </div>
+                    <!-- Email and Mobile -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="example@email.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number</label>
+                            <input
+                                type="tel"
+                                id="mobile"
+                                name="mobile"
+                                placeholder="10-digit mobile number"
+                                inputmode="numeric"
+                                pattern="[6-9][0-9]{9}"
+                                maxlength="10"
+                                minlength="10"
+                                autocomplete="tel-national"
+                                title="Enter a valid 10-digit Indian mobile number"
+                                required
+                            >
+                        </div>
+                    </div>
+                    <!-- Account Type -->
+                    <div class="form-group">
+                        <label for="accountType">Account Type / એકાઉન્ટનો પ્રકાર</label>
+                        <select id="accountType" name="accountType" required>
+                            <option value="" disabled selected>
+                                Select account type
+                            </option>
+                            <option value="beneficiary">
+                                Ration Beneficiary / રેશન લાભાર્થી
+                            </option>
+                            <option value="admin">
+                                Administrator / એડમિન
+                            </option>
+                        </select>
+                        <small class="field-note">
+                            Admin access requires authorization.
+                        </small>
+                    </div>
+                    <!-- Password -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="password-box">
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create password"
+                                    minlength="8"
+                                    autocomplete="new-password"
+                                    required
+                                >
+                                <button
+                                    type="button"
+                                    class="toggle-password"
+                                    data-target="password"
+                                    aria-label="Show password"
+                                >Show</button>
+                            </div>
+                        </div>
+                        <!-- Confirm Password -->
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="password-box">
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm password"
+                                    minlength="8"
+                                    autocomplete="new-password"
+                                    required
+                                >
+                                <button
+                                    type="button"
+                                    class="toggle-password"
+                                    data-target="confirmPassword"
+                                    aria-label="Show confirm password"
+                                >Show</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Terms and Conditions -->
+                    <div class="terms-row">
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+                        <label for="terms">
+                            I agree to the
+                            <a href="terms.html">Terms &amp; Conditions</a>
+                            and
+                            <a href="privacy.html">Privacy Policy</a>.
+                        </label>
+                    </div>
+                    <!-- Submit -->
+                    <button type="submit" class="create-button">
+                        Create Account &nbsp; →
+                    </button>
+                    <!-- Login Link -->
+                    <div class="login-link">
+                        Already have an account?
+                        <a href="ad-login.html">Login here</a>
+                    </div>
+                    <p id="formMessage" class="form-message" role="status"
+                        aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <span>🌿</span>
+            <strong>Smart Ration Seva</strong>
+            <span class="divider">|</span>
+            <span>સ્વસ્થ પરિવાર | સુરક્ષિત ભવિષ્ય</span>
+        </div>
+        <p>સેવા • સુરક્ષા • સમૃદ્ધિ</p>
+    </footer>
+    <!-- Frontend-only validation -->
+    <script>
+        const signupForm = document.getElementById("signupForm");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirmPassword");
+        const formMessage = document.getElementById("formMessage");
+        // Show / hide password
+        document.querySelectorAll(".toggle-password").forEach(button => {
+            button.addEventListener("click", function () {
+                const input = document.getElementById(this.dataset.target);
+                const showPassword = input.type === "password";
+                input.type = showPassword ? "text" : "password";
+                this.textContent = showPassword ? "Hide" : "Show";
+                this.setAttribute(
+                    "aria-label",
+                    showPassword ? "Hide password" : "Show password"
+                );
+            });
+        });
+        // Check password confirmation
+        confirmPassword.addEventListener("input", function () {
+            if (confirmPassword.value !== password.value) {
+                confirmPassword.setCustomValidity("Passwords do not match.");
+            } else {
+                confirmPassword.setCustomValidity("");
+            }
+        });
+        password.addEventListener("input", function () {
+            confirmPassword.setCustomValidity(
+                confirmPassword.value &&
+                confirmPassword.value !== password.value
+                    ? "Passwords do not match."
+                    : ""
+            );
+        });
+        // Frontend demo submission
+        signupForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (!signupForm.checkValidity()) {
+                signupForm.reportValidity();
+                return;
+            }
+            formMessage.textContent =
+                "Form validation successful! Connect a backend to create your account.";
+            formMessage.className = "form-message success";
+        });
+    </script>
+</body>
+</html>

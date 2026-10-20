@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Districts | Ration Seva</title>
+    <link rel="stylesheet" href="..\Public\dash-dist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="#" class="brand">
+            <i class="fa-solid fa-wheat-awn"></i>
+            <div>
+                <h2>Ration Seva</h2>
+                <p>& Food Distribution</p>
+                <small>Government of Gujarat</small>
+            </div>
+        </a>
+
+        <nav class="navigation">
+            <a href="dash-Dash.html">
+                <i class="fa-solid fa-house"></i> Dashboard
+            </a>
+            <a href="dash-dist.html" class="active">
+                <i class="fa-solid fa-location-dot"></i> Districts
+            </a>
+            <a href="dash-dealer.html">
+                <i class="fa-solid fa-store"></i> Dealer Shops
+            </a>
+            <a href="dash-food.html">
+                <i class="fa-solid fa-box"></i> Food Allocation
+            </a>
+            <!-- <a href="../distribution/distribution.html">
+                <i class="fa-solid fa-truck"></i> Distribution Tracking
+            </a> -->
+            <a href="../reports/reports.html">
+                <i class="fa-solid fa-chart-column"></i> Reports & Analytics
+            </a>
+            <a href="../users/users.html">
+                <i class="fa-solid fa-users"></i> Users & Management
+            </a>
+            <a href="../settings/settings.html">
+                <i class="fa-solid fa-gear"></i> Settings
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-seedling"></i>
+            <p>Safe Food<br>Healthy People<br>Stronger India</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-heading">
+                <h1>Districts</h1>
+                <p>View and manage food distribution details for all districts of Gujarat</p>
+            </div>
+
+            <div class="header-actions">
+                <select id="monthFilter" aria-label="Select month">
+                    <option value="October 2026">October 2026</option>
+                    <option value="September 2026">September 2026</option>
+                    <option value="August 2026">August 2026</option>
+                    <option value="July 2026">July 2026</option>
+                </select>
+
+                <button class="notification-btn" aria-label="Notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </button>
+
+                <div class="admin-profile">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>Food & Civil Supplies Dept.</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+
+            <section class="stats-grid">
+                <article class="stat-card green-card">
+                    <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h2>33</h2>
+                        <p>Total Districts</p>
+                        <small>Gujarat</small>
+                    </div>
+                </article>
+
+                <article class="stat-card blue-card">
+                    <div class="stat-icon"><i class="fa-solid fa-store"></i></div>
+                    <div>
+                        <h2>5,240</h2>
+                        <p>Dealer Shops</p>
+                        <small>Sample statistics</small>
+                    </div>
+                </article>
+
+                <article class="stat-card yellow-card">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div>
+                        <h2>48.76 L</h2>
+                        <p>Beneficiaries</p>
+                        <small>Illustrative count</small>
+                    </div>
+                </article>
+
+                <article class="stat-card green-card">
+                    <div class="stat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <div>
+                        <h2>12,480 MT</h2>
+                        <p>Food Allocated</p>
+                        <small>Sample quantity</small>
+                    </div>
+                </article>
+
+                <article class="stat-card blue-card">
+                    <div class="stat-icon"><i class="fa-solid fa-truck"></i></div>
+                    <div>
+                        <h2>10,742 MT</h2>
+                        <p>Food Distributed</p>
+                        <small>Sample quantity</small>
+                    </div>
+                </article>
+
+                <article class="stat-card red-card">
+                    <div class="stat-icon"><i class="fa-regular fa-clock"></i></div>
+                    <div>
+                        <h2>1,738 MT</h2>
+                        <p>Pending Distribution</p>
+                        <small>Sample quantity</small>
+                    </div>
+                </article>
+            </section>
+
+            <section class="overview-grid">
+                <article class="panel district-overview">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-map"></i> District Overview</h3>
+                        <span class="sample-label">Illustrative data</span>
+                    </div>
+
+                    <div class="map-content">
+                        <div class="gujarat-map" aria-label="Illustrative district status map">
+                            <div class="map-block map-a"></div>
+                            <div class="map-block map-b"></div>
+                            <div class="map-block map-c"></div>
+                            <div class="map-block map-d"></div>
+                            <div class="map-block map-e"></div>
+                            <div class="map-block map-f"></div>
+                            <div class="map-block map-g"></div>
+                            <div class="map-block map-h"></div>
+                            <div class="map-block map-i"></div>
+                            <div class="map-block map-j"></div>
+                            <div class="map-block map-k"></div>
+                            <div class="map-block map-l"></div>
+                            <div class="map-block map-m"></div>
+                            <div class="map-block map-n"></div>
+                        </div>
+
+                        <div class="map-legend">
+                            <p><span class="legend-dot completed"></span> 90–100% <small>Completed</small></p>
+                            <p><span class="legend-dot progress"></span> 70–89% <small>Good progress</small></p>
+                            <p><span class="legend-dot warning"></span> 50–69% <small>In progress</small></p>
+                            <p><span class="legend-dot pending"></span> Below 50% <small>Low progress</small></p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel chart-panel">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-chart-column"></i> District-wise Progress</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="districtChart"></canvas>
+                    </div>
+                </article>
+
+                <article class="panel quick-actions">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-bolt"></i> Quick Actions</h3>
+                    </div>
+                    <button class="action-btn" id="addDistrictBtn">
+                        <i class="fa-solid fa-plus"></i> Add New District
+                    </button>
+                    <button class="action-btn" id="reportBtn">
+                        <i class="fa-solid fa-file-lines"></i> View District Report
+                    </button>
+                    <button class="action-btn" id="allocationBtn">
+                        <i class="fa-solid fa-boxes-stacked"></i> Manage Allocation
+                    </button>
+                    <button class="action-btn" id="exportBtn">
+                        <i class="fa-solid fa-download"></i> Export CSV
+                    </button>
+                </article>
+            </section>
+
+            <section class="panel district-table-panel">
+                <div class="panel-heading table-heading">
+                    <h3><i class="fa-solid fa-building"></i> District Details</h3>
+
+                    <div class="table-controls">
+                        <input type="search" id="searchDistrict"
+                            placeholder="Search district..." aria-label="Search district">
+
+                        <select id="statusFilter" aria-label="Filter by status">
+                            <option value="All">All Status</option>
+                            <option value="Completed">Completed</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>District Name</th>
+                                <th>Dealer Shops</th>
+                                <th>Beneficiaries</th>
+                                <th>Allocated (MT)</th>
+                                <th>Distributed (MT)</th>
+                                <th>Pending (MT)</th>
+                                <th>Completion</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="districtTableBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="table-footer">
+                    <p id="tableInfo">Loading districts...</p>
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </section>
+
+            <p class="disclaimer">
+                Demonstration only: district figures, stock quantities and progress are sample data.
+                Connect a verified database before using this system operationally.
+            </p>
+        </section>
+    </main>
+
+    <div class="modal" id="districtModal" role="dialog"
+        aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal" aria-label="Close dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2 id="modalTitle">District Details</h2>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="JavaScripts\dash-dist.js"></script>
+</body>
+</html>

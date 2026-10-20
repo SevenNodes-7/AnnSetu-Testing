@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Ration Seva | Admin Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href= "..\Public\ad-login.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="brand">
+            <div class="logo">🌾</div>
+            <div class="brand-text">
+                <h1>Smart Ration Seva</h1>
+                <p>સ્વસ્થ પરિવાર | સુરક્ષિત ભવિષ્ય</p>
+            </div>
+        </div>
+        <div class="admin-profile">
+            <span class="notification">♧</span>
+            <span class="profile-icon">👤</span>
+            <span>Admin Panel</span>
+            <span>⌄</span>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <section class="login-card">
+
+            <!-- Left Welcome Section -->
+            <div class="welcome-section">
+                <div class="admin-badge">
+                    🛡️ <span>Admin Access</span>
+                </div>
+
+                <h2>
+                    સુવ્યવસ્થિત વિતરણ,<br>
+                    સમૃદ્ધ સમાજ
+                </h2>
+
+                <p class="welcome-description">
+                    રેશન સિસ્ટમના સંચાલન માટે<br>
+                    એડમિન પેનલમાં લોગિન કરો.
+                </p>
+
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <p>યોજનાનું<br>વ્યવસ્થાપન</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📋</div>
+                        <p>સ્ટોકનું<br>નિયંત્રણ</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🛡️</div>
+                        <p>સુરક્ષિત<br>વ્યવસ્થા</p>
+                    </div>
+                </div>
+
+                <!-- Farm Illustration -->
+                <div class="farm-illustration" aria-hidden="true">
+                    <div class="sun"></div>
+                    <div class="cloud cloud-one"></div>
+                    <div class="cloud cloud-two"></div>
+                    <div class="farm-house">
+                        <div class="house-roof"></div>
+                        <div class="house-body">
+                            <div class="house-door"></div>
+                        </div>
+                    </div>
+                    <div class="tree tree-one">🌳</div>
+                    <div class="tree tree-two">🌳</div>
+                    <div class="field field-one"></div>
+                    <div class="field field-two"></div>
+                    <div class="field field-three"></div>
+                    <div class="grain-bags">
+                        <span>🌾</span>
+                        <span>🌾</span>
+                        <span>🥣</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Login Section -->
+            <div class="form-section">
+                <div class="form-brand">
+                    <div class="logo">🌾</div>
+                    <div>
+                        <h2>Smart Ration Seva</h2>
+                        <p>સ્વસ્થ પરિવાર | સુરક્ષિત ભવિષ્ય</p>
+                    </div>
+                </div>
+
+                <div class="form-heading">
+                    <h2>Admin Login</h2>
+                    <p>Welcome back! Please login to your admin account.</p>
+                </div>
+
+                <!-- Login Form -->
+                <form action="#" method="post" class="login-form">
+
+                    <!-- Admin ID -->
+                    <div class="input-group">
+                        <label for="adminId" class="sr-only">Admin ID</label>
+                        <span class="input-icon">🪪</span>
+                        <input
+                            type="text"
+                            id="adminId"
+                            name="adminId"
+                            placeholder="Admin ID"
+                            autocomplete="username"
+                            required
+                        >
+                    </div>
+
+                    <!-- Username / Email -->
+                    <div class="input-group">
+                        <label for="username" class="sr-only">Username or Email ID</label>
+                        <span class="input-icon">👤</span>
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Username / Email ID"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <!-- Password -->
+                    <div class="input-group">
+                        <label for="password" class="sr-only">Password</label>
+                        <span class="input-icon">🔒</span>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                            autocomplete="current-password"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Show password"
+                        >◉</button>
+                    </div>
+
+                    <!-- Remember and Forgot Password -->
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" name="remember">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="forgot-password.html" class="forgot-link">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+                    <button type="submit" class="login-button">
+                        ⇥ &nbsp; Login
+                    </button>
+                </form>
+
+                <!-- Sign Up Option -->
+                <div class="signup-divider">
+                    <span></span>
+                    <p>If you are a new user</p>
+                    <span></span>
+                </div>
+
+                <a href="ad-sign in.html" class="signup-button">
+                    ♟ &nbsp; Sign Up / Create Account &nbsp; →
+                </a>
+
+                <p class="security-note">
+                    🔒 Your information is protected and secure.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <span class="footer-logo">🌿</span>
+            <strong>Smart Ration Seva</strong>
+            <span class="footer-divider">|</span>
+            <span>સ્વસ્થ પરિવાર | સુરક્ષિત ભવિષ્ય</span>
+        </div>
+        <div class="footer-slogan">
+            સેવા • સુરક્ષા • સમૃદ્ધિ
+        </div>
+    </footer>
+
+    <!-- Password Visibility -->
+    <script>
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", function () {
+            const isHidden = passwordInput.type === "password";
+            passwordInput.type = isHidden ? "text" : "password";
+            togglePassword.setAttribute(
+                "aria-label",
+                isHidden ? "Hide password" : "Show password"
+            );
+            togglePassword.textContent = isHidden ? "◎" : "◉";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Ration Seva</title>
+    <link rel="stylesheet" href="..\Public\dash-Dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+        <a href="dash-Dash.html" class="brand">
+            <i class="fa-solid fa-wheat-awn"></i>
+            <div>
+                <h2>Ration Seva</h2>
+                <p>& Food Distribution</p>
+                <small>Government of Gujarat</small>
+            </div>
+        </a>
+
+        <nav class="navigation">
+            <a href="dashboard.html" class="active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="dash-dist.html">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Districts</span>
+            </a>
+            <a href="dash-dealer.html">
+                <i class="fa-solid fa-store"></i>
+                <span>Dealer Shops</span>
+            </a>
+            <a href="dash-food.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Food Allocation</span>
+            </a>
+            <a href="dash-report.html">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports & Analytics</span>
+            </a>
+            <a href="dash-user.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Users & Management</span>
+            </a>
+            <a href="dash-setting.html">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <i class="fa-solid fa-seedling"></i>
+            <p>Safe Food<br>Healthy People<br>Stronger India</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle sidebar" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="page-heading">
+                <h1>Dashboard</h1>
+                <p>Overview of food distribution and ration services across Gujarat</p>
+            </div>
+
+            <div class="header-actions">
+                <label class="month-select">
+                    <i class="fa-regular fa-calendar"></i>
+                    <select id="monthFilter" aria-label="Reporting month">
+                        <option value="October 2026">October 2026</option>
+                        <option value="September 2026">September 2026</option>
+                        <option value="August 2026">August 2026</option>
+                        <option value="July 2026">July 2026</option>
+                    </select>
+                </label>
+
+                <button class="notification-btn" id="notificationBtn"
+                    aria-label="View notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>3</span>
+                </button>
+
+                <div class="admin-profile">
+                    <div class="profile-icon">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="profile-info">
+                        <strong>Administrator</strong>
+                        <small>Food & Civil Supplies Dept.</small>
+                    </div>
+                    <i class="fa-solid fa-chevron-down profile-arrow"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <section class="stats-grid">
+                <article class="stat-card green-card">
+                    <div class="stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="stat-info">
+                        <h2>33</h2>
+                        <p>Total Districts</p>
+                        <small>Gujarat</small>
+                    </div>
+                </article>
+
+                <article class="stat-card blue-card">
+                    <div class="stat-icon"><i class="fa-solid fa-store"></i></div>
+                    <div class="stat-info">
+                        <h2>5,240</h2>
+                        <p>Ration Dealer Shops</p>
+                        <small>Sample statistics</small>
+                    </div>
+                </article>
+
+                <article class="stat-card yellow-card">
+                    <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                    <div class="stat-info">
+                        <h2>48,76,532</h2>
+                        <p>Total Beneficiaries</p>
+                        <small>Illustrative count</small>
+                    </div>
+                </article>
+
+                <article class="stat-card green-card">
+                    <div class="stat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <div class="stat-info">
+                        <h2>12,480 <span>MT</span></h2>
+                        <p>Total Food Allocated</p>
+                        <small>Rice, wheat & others</small>
+                    </div>
+                </article>
+
+                <article class="stat-card blue-card">
+                    <div class="stat-icon"><i class="fa-solid fa-truck"></i></div>
+                    <div class="stat-info">
+                        <h2>10,742 <span>MT</span></h2>
+                        <p>Total Food Distributed</p>
+                        <small>86% of allocation</small>
+                    </div>
+                </article>
+
+                <article class="stat-card red-card">
+                    <div class="stat-icon"><i class="fa-regular fa-clock"></i></div>
+                    <div class="stat-info">
+                        <h2>1,738 <span>MT</span></h2>
+                        <p>Pending Distribution</p>
+                        <small>Needs monitoring</small>
+                    </div>
+                </article>
+            </section>
+
+            <section class="main-grid">
+                <article class="panel quick-stats-panel">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-cubes-stacked"></i> Quick Stats</h3>
+                    </div>
+
+                    <div class="quick-stats-grid">
+                        <div class="quick-stat">
+                            <div class="quick-icon green-icon">
+                                <i class="fa-solid fa-shop"></i>
+                            </div>
+                            <div>
+                                <p>Active Shops</p>
+                                <h3>4,632</h3>
+                                <small>88% of total</small>
+                            </div>
+                        </div>
+
+                        <div class="quick-stat">
+                            <div class="quick-icon yellow-icon">
+                                <i class="fa-solid fa-house-user"></i>
+                            </div>
+                            <div>
+                                <p>Beneficiary Households</p>
+                                <h3>48,76,532</h3>
+                                <small>Sample count</small>
+                            </div>
+                        </div>
+
+                        <div class="quick-stat">
+                            <div class="quick-icon blue-icon">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <p>Food Delivered Today</p>
+                                <h3>245 MT</h3>
+                                <small>Across 12 districts</small>
+                            </div>
+                        </div>
+
+                        <div class="quick-stat">
+                            <div class="quick-icon red-icon">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div>
+                                <p>Pending Shops</p>
+                                <h3>196</h3>
+                                <small>Requires attention</small>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="panel banner-panel">
+                    <div class="banner-content">
+                        <span>RATION SEVA</span>
+                        <h2>Food Security<br>for Every Family</h2>
+                        <p>Connecting districts, ration shops<br>and beneficiaries across Gujarat.</p>
+                    </div>
+                    <div class="banner-decoration">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-grid">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-trophy"></i> Top Performing Districts</h3>
+                        <a href="dash-dist.html" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>District</th>
+                                    <th>Completion</th>
+                                    <th>Distributed (MT)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="districtTable">
+                                <tr>
+                                    <td>1</td>
+                                    <td>Rajkot</td>
+                                    <td>92%</td>
+                                    <td>1,104</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ahmedabad</td>
+                                    <td>88%</td>
+                                    <td>1,012</td>
+                                    <td><span class="status progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Surat</td>
+                                    <td>76%</td>
+                                    <td>745</td>
+                                    <td><span class="status progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Vadodara</td>
+                                    <td>69%</td>
+                                    <td>594</td>
+                                    <td><span class="status progress">In Progress</span></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Jamnagar</td>
+                                    <td>62%</td>
+                                    <td>465</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-boxes-stacked"></i> Food Stock at Warehouses</h3>
+                        <a href="dash-food.html" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Food Item</th>
+                                    <th>Stock (MT)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><i class="fa-solid fa-bowl-rice food-icon"></i> Rice</td><td>2,480</td><td><span class="status completed">Sufficient</span></td></tr>
+                                <tr><td><i class="fa-solid fa-wheat-awn food-icon wheat"></i> Wheat</td><td>2,150</td><td><span class="status completed">Sufficient</span></td></tr>
+                                <tr><td><i class="fa-solid fa-seedling food-icon"></i> Pulses</td><td>1,320</td><td><span class="status completed">Sufficient</span></td></tr>
+                                <tr><td><i class="fa-solid fa-bottle-water food-icon oil"></i> Edible Oil</td><td>980</td><td><span class="status pending">Low</span></td></tr>
+                                <tr><td><i class="fa-solid fa-cube food-icon"></i> Sugar</td><td>760</td><td><span class="status completed">Sufficient</span></td></tr>
+                                <tr><td><i class="fa-solid fa-mug-hot food-icon tea"></i> Tea & Salt</td><td>430</td><td><span class="status completed">Sufficient</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <section class="content-grid bottom-grid">
+                <article class="panel">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Distribution</h3>
+                        <a href="dash-dist.html" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>District</th>
+                                    <th>Dealer Shop</th>
+                                    <th>Food Items</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="distributionTable">
+                                <tr><td>18 Oct 2026</td><td>Rajkot</td><td>Shree Ram Dealer</td><td>Rice + Wheat</td><td>50 MT</td><td><span class="status completed">Completed</span></td></tr>
+                                <tr><td>18 Oct 2026</td><td>Ahmedabad</td><td>Jay Mataji Dealer</td><td>Pulses + Oil</td><td>40 MT</td><td><span class="status progress">In Progress</span></td></tr>
+                                <tr><td>17 Oct 2026</td><td>Surat</td><td>Shiv Shakti Dealer</td><td>Rice</td><td>32 MT</td><td><span class="status completed">Completed</span></td></tr>
+                                <tr><td>17 Oct 2026</td><td>Vadodara</td><td>Krishna Dealer</td><td>Wheat</td><td>55 MT</td><td><span class="status progress">In Progress</span></td></tr>
+                                <tr><td>16 Oct 2026</td><td>Jamnagar</td><td>Sardar Dealer</td><td>Sugar + Tea</td><td>45 MT</td><td><span class="status pending">Pending</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="panel activity-panel">
+                    <div class="panel-heading">
+                        <h3><i class="fa-solid fa-bolt"></i> Recent Activity</h3>
+                        <button class="text-button" id="viewActivityBtn">View All <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+
+                    <div class="activity-list" id="activityList">
+                        <div class="activity-item">
+                            <span class="activity-icon success"><i class="fa-solid fa-check"></i></span>
+                            <div class="activity-text">
+                                <strong>3 dealer shops completed distribution</strong>
+                                <p>Rajkot, Jamnagar, Porbandar</p>
+                            </div>
+                            <time>2 hours ago</time>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-icon warning"><i class="fa-solid fa-truck"></i></span>
+                            <div class="activity-text">
+                                <strong>Delivery delayed</strong>
+                                <p>Food dispatch to Surat</p>
+                            </div>
+                            <time>4 hours ago</time>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-icon danger"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                            <div class="activity-text">
+                                <strong>Distribution not completed</strong>
+                                <p>Ahmedabad — 12 shops pending</p>
+                            </div>
+                            <time>6 hours ago</time>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-icon warning"><i class="fa-solid fa-message"></i></span>
+                            <div class="activity-text">
+                                <strong>Beneficiary complaint</strong>
+                                <p>Jamnagar — ration not received</p>
+                            </div>
+                            <time>8 hours ago</time>
+                        </div>
+
+                        <div class="activity-item">
+                            <span class="activity-icon success"><i class="fa-solid fa-check"></i></span>
+                            <div class="activity-text">
+                                <strong>Stock difference reviewed</strong>
+                                <p>Vadodara — allocated vs reported</p>
+                            </div>
+                            <time>1 day ago</time>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="panel alerts-panel">
+                <div class="panel-heading">
+                    <h3><i class="fa-solid fa-bell"></i> Alerts & Notifications</h3>
+                    <button class="text-button" id="viewAlertsBtn">View All <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+
+                <div class="alerts-grid" id="alertsList">
+                    <div class="alert-item">
+                        <span class="activity-icon danger"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                        <div><strong>Low stock at 3 dealer shops</strong><p>Check inventory levels for urgent supply.</p></div>
+                        <time>2 hours ago</time>
+                    </div>
+
+                    <div class="alert-item">
+                        <span class="activity-icon warning"><i class="fa-solid fa-truck"></i></span>
+                        <div><strong>Delivery delayed</strong><p>Food dispatch to Surat requires attention.</p></div>
+                        <time>4 hours ago</time>
+                    </div>
+
+                    <div class="alert-item">
+                        <span class="activity-icon info"><i class="fa-solid fa-user-plus"></i></span>
+                        <div><strong>New dealer shop registered</strong><p>Kutch — registration awaiting review.</p></div>
+                        <time>6 hours ago</time>
+                    </div>
+
+                    <div class="alert-item">
+                        <span class="activity-icon info"><i class="fa-solid fa-file-lines"></i></span>
+                        <div><strong>Monthly report ready</strong><p id="reportMonth">October 2026 — district summary.</p></div>
+                        <time>1 day ago</time>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="page-footer">
+                <p><i class="fa-solid fa-shield-halved"></i> Ration Seva & Food Distribution Management System</p>
+                <p>Admin Dashboard · Demonstration data only</p>
+            </footer>
+        </div>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="JavaScripts\dash-Dash.js"></script>
+</body>
+</html>
