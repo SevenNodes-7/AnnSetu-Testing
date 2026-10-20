@@ -10,228 +10,197 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="..\Public\dash-report.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <aside class="sidebar" id="sidebar">
+  <aside class="sidebar">
     <div class="brand">
       <i class="fa-solid fa-wheat-awn brand-icon"></i>
       <div>
         <h2>Ration Seva</h2>
-        <h3>& Food Distribution</h3>
-        <p>Government of Gujarat</p>
+        <p>& Food Distribution</p>
+        <small>Government of Gujarat</small>
       </div>
     </div>
 
-    <nav class="navigation">
-      <a href="dash-Dash.html" class="nav-link" data-page="Dashboard">
-        <i class="fa-solid fa-house"></i><span>Dashboard</span>
-      </a>
-      <a href="dash-dist.html" class="nav-link" data-page="Districts">
-        <i class="fa-solid fa-location-dot"></i><span>Districts</span>
-      </a>
-      <a href="dash-dealer.html" class="nav-link" data-page="Dealer Shops">
-        <i class="fa-solid fa-store"></i><span>Dealer Shops</span>
-      </a>
-      <a href="dash-food.html" class="nav-link" data-page="Food Allocation">
-        <i class="fa-solid fa-box-open"></i><span>Food Allocation</span>
-      </a>
-      <a href="dash-report.html" class="nav-link active" data-page="Reports & Analytics">
-        <i class="fa-solid fa-chart-column"></i><span>Reports & Analytics</span>
-      </a>
-      <a href="dash-user.html" class="nav-link" data-page="Users & Management">
-        <i class="fa-solid fa-users"></i><span>Users & Management</span>
-      </a>
-      <a href="dash-setting.html" class="nav-link" data-page="Settings">
-        <i class="fa-solid fa-gear"></i><span>Settings</span>
-      </a>
-    </nav>
 
-    <div class="sidebar-art">
-      <div class="hill hill-one"></div>
-      <div class="hill hill-two"></div>
-      <i class="fa-solid fa-wheat-awn seedling"></i>
-      <p>Safe Food<br>Healthy People<br>Stronger India</p>
-    </div>
+<nav class="navigation">
+  <a href="dash-Dash.html">
+    <i class="fa-solid fa-house"></i> Dashboard
+  </a>
+  <a href="dash-dist.html">
+    <i class="fa-solid fa-location-dot"></i> Districts
+  </a>
+  <a href="dash-dealer.html">
+    <i class="fa-solid fa-store"></i> Dealer Shops
+  </a>
+  <a href="dash-food.html">
+    <i class="fa-solid fa-box-open"></i> Food Allocation
+  </a>
+  <a href="dash-report.html" class="active">
+    <i class="fa-solid fa-chart-column"></i> Reports &amp; Analytics
+  </a>
+  <a href="dash-user.html">
+    <i class="fa-solid fa-users"></i> Users &amp; Management
+  </a>
+  <a href="dash-setting.html">
+    <i class="fa-solid fa-gear"></i> Settings
+  </a>
+</nav>
 
-    <div class="system-status">
-      <span class="online-dot"></span>
-      <span>System status: Online</span>
+
+    <div class="sidebar-bottom">
+      <div class="landscape">
+        <i class="fa-solid fa-wheat-awn landscape-wheat"></i>
+        <p>Safe Food<br>Healthy People<br>Stronger India</p>
+      </div>
+      <div class="system-status">
+        <span></span> System status: Online
+      </div>
     </div>
   </aside>
 
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
   <main class="main-content">
     <header class="topbar">
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
       <div class="page-heading">
         <h1>Reports & Analytics</h1>
         <p>View key reports and insights for better decision making</p>
       </div>
 
-      <div class="topbar-actions">
-        <label class="month-selector">
-          <i class="fa-regular fa-calendar-days"></i>
+      <div class="top-actions">
+        <label class="month-box">
+          <i class="fa-regular fa-calendar"></i>
           <select id="monthSelect" aria-label="Select month">
             <option>October 2026</option>
             <option>September 2026</option>
             <option>August 2026</option>
-            <option>July 2026</option>
           </select>
+          <i class="fa-solid fa-chevron-down"></i>
         </label>
 
-        <button class="notification" id="notificationBtn" aria-label="Notifications">
+        <button class="icon-button notification" id="notificationBtn" aria-label="Notifications">
           <i class="fa-regular fa-bell"></i>
-          <span>3</span>
+          <span class="notification-count">3</span>
         </button>
 
-        <div class="admin-profile">
-          <div class="admin-avatar">
-            <i class="fa-solid fa-user-tie"></i>
-          </div>
-          <div class="admin-details">
+        <button class="profile-button" id="profileBtn">
+          <span class="avatar"><i class="fa-solid fa-user-tie"></i></span>
+          <span class="profile-text">
             <strong>Administrator</strong>
             <small>Food & Civil Supplies Dept.</small>
-          </div>
-          <i class="fa-solid fa-chevron-down profile-chevron"></i>
-        </div>
+          </span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
       </div>
     </header>
 
     <section class="dashboard">
 
-      <!-- KPI CARDS -->
-      <section class="stats-grid">
+      <!-- Summary cards -->
+      <div class="stats-grid">
         <article class="stat-card green">
           <div class="stat-icon"><i class="fa-solid fa-file-lines"></i></div>
-          <div class="stat-content">
+          <div>
             <p>Total Reports</p>
             <h2>12</h2>
-            <small class="positive"><i class="fa-solid fa-arrow-up"></i> 3 new this month</small>
+            <small class="positive">↑ 3 new this month</small>
           </div>
         </article>
 
         <article class="stat-card blue">
           <div class="stat-icon"><i class="fa-solid fa-chart-simple"></i></div>
-          <div class="stat-content">
+          <div>
             <p>Total Beneficiaries</p>
             <h2>48.76 L</h2>
-            <small class="positive"><i class="fa-solid fa-arrow-up"></i> 2% from last month</small>
+            <small class="positive">↑ 2% from last month</small>
           </div>
         </article>
 
-        <article class="stat-card amber">
+        <article class="stat-card gold">
           <div class="stat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
-          <div class="stat-content">
+          <div>
             <p>Total Food Allocated</p>
             <h2>12,480 <span>MT</span></h2>
-            <small class="positive"><i class="fa-solid fa-arrow-up"></i> 6% from last month</small>
+            <small class="positive">↑ 6% from last month</small>
           </div>
         </article>
 
         <article class="stat-card red">
           <div class="stat-icon"><i class="fa-solid fa-truck"></i></div>
-          <div class="stat-content">
+          <div>
             <p>Total Food Distributed</p>
             <h2>10,742 <span>MT</span></h2>
-            <small class="positive"><i class="fa-solid fa-arrow-up"></i> 5% from last month</small>
+            <small class="positive">↑ 5% from last month</small>
           </div>
         </article>
-      </section>
+      </div>
 
-      <!-- CHARTS -->
-      <section class="charts-grid">
-
-        <article class="panel performance-panel">
+      <!-- Analytics panels -->
+      <div class="analytics-grid">
+        <section class="panel performance-panel">
           <div class="panel-heading">
-            <h3><i class="fa-solid fa-users-viewfinder"></i> District-wise Performance</h3>
-            <select id="districtLimit" aria-label="District chart selection">
+            <h3><i class="fa-solid fa-chart-line"></i> District-wise Performance</h3>
+            <select id="districtFilter" class="small-select">
               <option value="5">Top 5 Districts</option>
-              <option value="3">Top 3 Districts</option>
+              <option value="all">All Districts</option>
             </select>
           </div>
-
-          <div class="bar-chart-wrap">
+          <div class="chart-area">
             <canvas id="districtChart"></canvas>
           </div>
-        </article>
+        </section>
 
-        <article class="panel category-panel">
+        <section class="panel distribution-panel">
           <div class="panel-heading">
-            <h3><i class="fa-solid fa-users-viewfinder"></i> Food Category Distribution</h3>
+            <h3><i class="fa-solid fa-chart-pie"></i> Food Category Distribution</h3>
           </div>
 
-          <div class="category-content">
+          <div class="distribution-content">
             <div class="donut-wrap">
               <canvas id="foodChart"></canvas>
               <div class="donut-center">
-                <h2>12,480 <span>MT</span></h2>
-                <p>Total Allocated</p>
+                <strong>12,480 <span>MT</span></strong>
+                <small>Total Allocated</small>
               </div>
             </div>
 
-            <div class="category-legend">
-              <div class="legend-header">
-                <span>Allocated (MT)</span>
-                <span>Share</span>
-              </div>
+            <div class="food-legend">
+              <div class="legend-heading"><span>Allocated (MT)</span><span>Share</span></div>
 
-              <div class="category-row">
-                <div class="food-name">
-                  <span class="food-icon rice"><i class="fa-solid fa-wheat-awn"></i></span>
-                  <span>Rice</span>
-                </div>
-                <span>3,994</span><span>32%</span>
+              <div class="food-row">
+                <span class="food-name"><i class="food-dot rice"></i>Rice</span>
+                <strong>3,994</strong><span>32%</span>
               </div>
-
-              <div class="category-row">
-                <div class="food-name">
-                  <span class="food-icon wheat"><i class="fa-solid fa-wheat-awn"></i></span>
-                  <span>Wheat</span>
-                </div>
-                <span>3,494</span><span>28%</span>
+              <div class="food-row">
+                <span class="food-name"><i class="food-dot wheat"></i>Wheat</span>
+                <strong>3,494</strong><span>28%</span>
               </div>
-
-              <div class="category-row">
-                <div class="food-name">
-                  <span class="food-icon pulses"><i class="fa-solid fa-seedling"></i></span>
-                  <span>Pulses</span>
-                </div>
-                <span>2,246</span><span>16%</span>
+              <div class="food-row">
+                <span class="food-name"><i class="food-dot pulses"></i>Pulses</span>
+                <strong>2,246</strong><span>18%</span>
               </div>
-
-              <div class="category-row">
-                <div class="food-name">
-                  <span class="food-icon oil"><i class="fa-solid fa-bottle-water"></i></span>
-                  <span>Edible Oil</span>
-                </div>
-                <span>1,498</span><span>12%</span>
+              <div class="food-row">
+                <span class="food-name"><i class="food-dot oil"></i>Edible Oil</span>
+                <strong>1,498</strong><span>12%</span>
               </div>
-
-              <div class="category-row">
-                <div class="food-name">
-                  <span class="food-icon sugar"><i class="fa-solid fa-cubes-stacked"></i></span>
-                  <span>Sugar</span>
-                </div>
-                <span>1,248</span><span>10%</span>
+              <div class="food-row">
+                <span class="food-name"><i class="food-dot sugar"></i>Sugar</span>
+                <strong>1,248</strong><span>10%</span>
               </div>
             </div>
           </div>
-        </article>
-      </section>
+        </section>
+      </div>
 
-      <!-- RECENT REPORTS -->
-      <section class="panel recent-panel">
-        <div class="recent-heading">
+      <!-- Recent reports -->
+      <section class="panel reports-panel">
+        <div class="panel-heading reports-heading">
           <h3><i class="fa-solid fa-file-lines"></i> Recent Reports</h3>
-          <button id="viewAllReports">View All Reports <i class="fa-solid fa-arrow-right"></i></button>
+          <button class="text-button" id="viewAllBtn">View All Reports <i class="fa-solid fa-arrow-right"></i></button>
         </div>
 
-        <div class="table-scroll">
+        <div class="table-wrap">
           <table>
             <thead>
               <tr>
@@ -243,69 +212,77 @@
                 <th>Action</th>
               </tr>
             </thead>
-
             <tbody id="reportTable">
-              <tr>
+              <tr data-type="Allocation">
                 <td>1.</td>
                 <td>District-wise Food Allocation Report</td>
-                <td><span class="type-tag allocation">Allocation</span></td>
+                <td><span class="tag allocation">Allocation</span></td>
                 <td>20 Oct 2026, 10:24 AM</td>
                 <td><span class="status completed">Completed</span></td>
-                <td><button class="download-btn" data-report="0"><i class="fa-solid fa-download"></i> Download</button></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
               </tr>
-              <tr>
+              <tr data-type="Beneficiaries">
                 <td>2.</td>
                 <td>Beneficiary Coverage Report</td>
-                <td><span class="type-tag beneficiaries">Beneficiaries</span></td>
+                <td><span class="tag beneficiaries">Beneficiaries</span></td>
                 <td>18 Oct 2026, 04:15 PM</td>
                 <td><span class="status completed">Completed</span></td>
-                <td><button class="download-btn" data-report="1"><i class="fa-solid fa-download"></i> Download</button></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
               </tr>
-              <tr>
+              <tr data-type="Shops">
                 <td>3.</td>
                 <td>Dealer Shops Summary</td>
-                <td><span class="type-tag shops">Shops</span></td>
+                <td><span class="tag shops">Shops</span></td>
                 <td>16 Oct 2026, 11:03 AM</td>
                 <td><span class="status completed">Completed</span></td>
-                <td><button class="download-btn" data-report="2"><i class="fa-solid fa-download"></i> Download</button></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
               </tr>
-              <tr>
+              <tr data-type="Stock">
                 <td>4.</td>
                 <td>Stock Position Report</td>
-                <td><span class="type-tag stock">Stock</span></td>
+                <td><span class="tag stock">Stock</span></td>
                 <td>13 Oct 2026, 09:42 AM</td>
                 <td><span class="status completed">Completed</span></td>
-                <td><button class="download-btn" data-report="3"><i class="fa-solid fa-download"></i> Download</button></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
               </tr>
-              <tr>
+              <tr data-type="Distribution">
                 <td>5.</td>
                 <td>Pending Distribution Report</td>
-                <td><span class="type-tag distribution">Distribution</span></td>
+                <td><span class="tag distribution">Distribution</span></td>
                 <td>10 Oct 2026, 03:20 PM</td>
                 <td><span class="status completed">Completed</span></td>
-                <td><button class="download-btn" data-report="4"><i class="fa-solid fa-download"></i> Download</button></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
+              </tr>
+              <tr class="extra-report" data-type="Allocation" hidden>
+                <td>6.</td>
+                <td>Monthly Allocation Summary</td>
+                <td><span class="tag allocation">Allocation</span></td>
+                <td>08 Oct 2026, 01:30 PM</td>
+                <td><span class="status completed">Completed</span></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
+              </tr>
+              <tr class="extra-report" data-type="Stock" hidden>
+                <td>7.</td>
+                <td>District Stock Audit</td>
+                <td><span class="tag stock">Stock</span></td>
+                <td>05 Oct 2026, 12:00 PM</td>
+                <td><span class="status completed">Completed</span></td>
+                <td><button class="download-btn"><i class="fa-solid fa-download"></i> Download</button></td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p class="table-note" id="tableNote">Showing 5 recent reports</p>
       </section>
 
       <footer class="page-footer">
-        Demonstration dashboard — figures and report records are sample data.
+        Demonstration only — figures and report records are sample data. Connect a verified database before using this system operationally.
       </footer>
 
     </section>
   </main>
 
-  <dialog id="messageDialog">
-    <div class="dialog-header">
-      <h3 id="messageTitle">Reports</h3>
-      <button id="closeMessage" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div id="messageBody"></div>
-  </dialog>
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <div class="toast" id="toast" role="status"></div>
   <script src="..\JavaScripts\dash-report.js"></script>
 </body>
 </html>
